@@ -1,0 +1,18 @@
+body {
+    background-color: white;
+}
+section.wordPlacement {
+    background-color: blueviolet;
+    color: black;
+}
+#randomWord{
+    color: black;
+}
+section.letterButtons {
+    background-color: white;
+    color: blue;
+}
+#buttonA {
+    background-color: white;
+    color: black;
+}
