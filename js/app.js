@@ -19,11 +19,142 @@ const wordBank = ['alien', 'alive', 'alpha', 'awful', 'anger', 'adopt', 'after',
 //     }
 // }
 
+let answer = '';
+let maxWrong = 7;
+let mistakes = 0;
+let guessed = [];
+let wordStatus = null;
+
 
 // Random Word --- not hidden
-const randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-const wordId = document.querySelector('#randomWord')
-wordId.innerHTML = `${randomWord}`
+// const randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+// const wordId = document.querySelector('#randomWord')
+// wordId.innerHTML = `${randomWord}`
+
+function randomWord() {
+    answer = wordBank[Math.floor(Math.random() * wordBank.length)];
+}
+randomWord()
+
+function guessedWord() {
+    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : ' _ ')).join('');
+    document.querySelector('#randomWord').innerHTML = wordStatus
+}
+
+guessedWord()
+
+function handleGuess(chosenLetter) {
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+    document.getElementById(chosenLetter). setAttribute('disabled', true);
+
+    if(answer.indexOf(chosenLetter) >= 0) {
+        guessedWord();
+        checkIfGameWon()
+    } else if (answer.indexOf(chosenLetter) === -1) {
+        mistakes ++
+        updateMistakes()
+        updateSpaceShip()
+        checkIfGameLost()
+    }
+    function updateMistakes() {
+        getElementById('mistakes').innerHTML = mistakes;
+    }
+}
+
+function checkIfGameWon() {
+    if (wordStatus === answer) {
+        document.getElementById
+    }
+}
+
+function checkIfGameLost() {
+    if (wordStatus === maxWrong) {
+        document.querySelector('#randomWord').innerHTML = `The answer was ${answer}`
+        document.getElementById
+    }
+}
+
+function updateSpaceShip() {
+    document.getElementById(spaceShipPic).src = './images/' + mistakes + '.jpg'
+} // corresponds to images
+
+function reset() {
+    mistakes = 0;
+    guessed = [];
+    randomWord();
+    guessedWord();
+    updateMistakes();
+    //generateButtons();
+}
+
+// let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+// let guess; //user guess
+// let letters = []; //correctly guessed letters
+// let wrongLetters = []; //incorrectly guessed letters
+// let counter = 0; //counts correct letters
+// let lives; //counts users lives
+
+
+// function start() {
+//     for (i = 0; i < randomWord.length; i++) {
+//       letters[i] = "__";
+//     }
+//     document.getElementById('randomWord').innerHTML = letters.join(" ");
+
+// }
+
+
+
+
+// function checkLetter() {
+//     document.onclick = function(event) {
+//       guess = event.key.toLowerCase();
+//       var found = false; //lets use bool to check if a letter was found
+//       for (i = 0; i < word.length; i++) {
+//         if (guess === word[i]) {
+//           letters[i] = guess;
+//           document.getElementById("answer").innerHTML = letters.join(" ");
+//           found = true;
+//         }
+//       }
+//       //now all letters have been checked, was any found
+//       if (found) return; //if yes return
+      
+//       //wrong, lets also see if 
+//       //it's not already logged, if not add it
+//       //you could also then use  wrongLetters.length
+//       //for working out if gueses area all used up.
+//       if (wrongLetters.indexOf(guess) < 0) {
+//         wrongLetters.push(guess);
+//         document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
+//       }
+//     }
+//   }
+
+
+
+// function isLetterInWord(letter)
+// {
+//     for(i = 0; i < randomWord.length; i++)
+//         {
+//         if(letter == Word[i])
+//         {
+//             randomWord[i] = letter;
+//             RightGuess += letter;
+//             var el = document.getElementById("right");
+//             el.innerHTML = "Your right guesses are:" + RightGuess;
+//             win();
+//         }
+
+//         }
+//     if (letter != Word[i]){
+//             WrongGuess += letter;
+//             var e = document.getElementById("wrong");
+//             e.innerHTML = "Your wrong guesses are:" + WrongGuess;
+//         }
+// }
+// "string".indexOf("r") > -1;
+
 
 
 // function handleClick(event) {
@@ -98,7 +229,7 @@ wordId.innerHTML = `${randomWord}`
 //     }
 //   }
   
-//   container.addEventListener("click", guess);
+// container.addEventListener("click", guess);
   
 
 // let userSelection;
@@ -125,13 +256,11 @@ wordId.innerHTML = `${randomWord}`
 //     }
 
 
-
-
-const answerArray = [];
-    for (let i = 0; i < randomWord.length; i++) {
-    answerArray[i] = "_";
-}
-const remainingLetters = randomWord.length;
+// const answerArray = [];
+//     for (let i = 0; i < randomWord.length; i++) {
+//     answerArray[i] = "_";
+// }
+// const remainingLetters = randomWord.length;
 
 // while (remainingLetters > 0) {
 //     // Game code goes here
@@ -140,16 +269,16 @@ const remainingLetters = randomWord.length;
 //     // Update answerArray and remainingLetters for every correct guess
 //    }
 
-const guess = alert("Guess a letter, or click Cancel to stop playing.");
+// const guess = alert("Guess a letter, or click Cancel to stop playing.");
 
-for (let j = 0; j < randomWord.length; j++) {
-        if (randomWord[j] === guess) {
-        answerArray[j] = guess;
-        remainingLetters--;
-     }
-    }
+// for (let j = 0; j < randomWord.length; j++) {
+//         if (randomWord[j] === guess) {
+//         answerArray[j] = guess;
+//         remainingLetters--;
+//      }
+//     }
 
-    answerArray.join(" ")
+//     answerArray.join(" ")
 
 // Play & Instruction Buttons
 // function play() {
@@ -168,49 +297,42 @@ for (let j = 0; j < randomWord.length; j++) {
 
 // insButton.addEventListener("click", instruct)
 
-// Amanda's game
-// buttonElements.forEach((element) => {
-//     element.addEventListener("click", function() {
-//     clickButton(element.attributes["letterButtons"].value)
-//     }); 
-// });
 
-// function populateWord(key) {
-//     if (letter < 6) {
-//     wordElements[row - 1].querySelectorAll(".word")[letter - 1].innerText = key;
-//     letter += 1;
-//     }
-// }
-
-
-buttonElements.forEach((element) => {
-    element.addEventListener("click", function() {
-    clickButton(element.getElementbyClassName["letterButtons"])
-    }); 
-});
-
-function populateWord(key) {
-    if (letter < 6) {
-    wordElements[row - 1].querySelectorAll(".word")[letter - 1].innerText = key;
-    letter += 1;
-    }
-}
 
 // Button click event
 
-function clickButton() {
-    document.getElementById("buttonA").style.backgroundColor = 'red';
-    // document.getElementById("buttonA").removeEventListener()
-}
+// function clickButton() {
+//     document.querySelectorAll(".letterButtons").style.backgroundColor = 'red';
+//     // document.getElementById("buttonA").removeEventListener()
+// }
 
-let buttonA = document.querySelector("#buttonA")
+// let buttons = document.querySelector(".letterButtons")
 
-buttonA.addEventListener("click", clickButton)
-
+// buttons.addEventListener("click", clickButton)
 
 
 
 // Do I need to duplicate the function for each button??
+
+// function clickButtonA() {
+//     document.getElementById("buttonA").style.backgroundColor = 'red';
+//     // document.getElementById("buttonA").removeEventListener()
+// }
+
+// let buttonA = document.querySelector("#buttonA")
+
+// buttonA.addEventListener("click", clickButtonA)
+
+// function clickButtonB() {
+//     document.getElementById("buttonB").style.backgroundColor = 'red';
+//     // document.getElementById("buttonA").removeEventListener()
+// }
+
+// let buttonB = document.querySelector("#buttonB")
+
+// buttonB.addEventListener("click", clickButtonB)
+
+
 
 // function clickButtons() {
 //     document.getElementsByClassName("letterButtons").style.backgroundColor = 'red'
