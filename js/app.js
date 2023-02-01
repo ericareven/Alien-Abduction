@@ -11,6 +11,7 @@ const wordBank = ['alien', 'alive', 'alpha', 'awful', 'anger', 'adopt', 'after',
 'stain', 'salon', 'sadly', 'sauce', 'savor' ,'table', 'tangy', 'traps', 'taxis', 'teary', 'thank', 'tempo', 'under', 'unzip', 'until', 'vague', 'vapor', 'vegan', 'venom',
 'white', 'weary', 'wagon', 'waist', 'wacky', 'yacht', 'yeast', 'yelps', 'zebra']
 
+// console.log(wordBank.length) // 149 words
 
 // class Game {
 //     constructor(word) {
@@ -25,9 +26,80 @@ const wordId = document.querySelector('#randomWord')
 wordId.innerHTML = `${randomWord}`
 
 
+// function handleClick(event) {
+//     const isButton = event.target.nodeName === "BUTTON";
+//     if (isButton) {
+//       //console.dir(event.target.id);
+//       //console.log(isButton);
+//       const buttonId = document.getElementById(event.target.id);
+//       buttonId.classList.add("selected");
+//     }
+//     return;
+//   }
 
 
+// function generateAnswerDisplay(word) {
+//     var wordArray = word.split("");
+//     //console.log(wordArray);
+//     for (var i = 0; i < answer.length; i++) {
+//       if (wordArray[i] !== "-") {
+//         wordDisplay.push("_");
+//       } else {
+//         wordDisplay.push("-");
+//       }
+//     }
+//     return wordDisplay.join(" ");
+//   }
 
+
+// function guess(event) {
+//     const guessWord = event.target.id;
+//     const answerArray = answer.split("");
+//     var counter = 0;
+//     if (answer === winningCheck) {
+//       livesDisplay.innerHTML = `YOU WIN!`;
+//       return;
+//     } else {
+//       if (life > 0) {
+//         for (var j = 0; j < answer.length; j++) {
+//           if (guessWord === answerArray[j]) {
+//             wordDisplay[j] = guessWord;
+//             console.log(guessWord);
+//             answerDisplay.innerHTML = wordDisplay.join(" ");
+//             winningCheck = wordDisplay.join("");
+//             //console.log(winningCheck)
+//             counter += 1;
+//           }
+//         }
+//         if (counter === 0) {
+//           life -= 1;
+//           counter = 0;
+//           animate();
+//         } else {
+//           counter = 0;
+//         }
+//         if (life > 1) {
+//           livesDisplay.innerHTML = `You have ${life} lives!`;
+//         } else if (life === 1) {
+//           livesDisplay.innerHTML = `You have ${life} life!`;
+//         } else {
+//           livesDisplay.innerHTML = `GAME OVER!`;
+//         }
+//       } else {
+//         return;
+//       }
+//       console.log(wordDisplay);
+//       //console.log(counter);
+//       //console.log(life);
+//       if (answer === winningCheck) {
+//         livesDisplay.innerHTML = `YOU WIN!`;
+//         return;
+//       }
+//     }
+//   }
+  
+//   container.addEventListener("click", guess);
+  
 
 // let userSelection;
 // let playAgain = true;
@@ -96,6 +168,33 @@ for (let j = 0; j < randomWord.length; j++) {
 
 // insButton.addEventListener("click", instruct)
 
+// Amanda's game
+// buttonElements.forEach((element) => {
+//     element.addEventListener("click", function() {
+//     clickButton(element.attributes["letterButtons"].value)
+//     }); 
+// });
+
+// function populateWord(key) {
+//     if (letter < 6) {
+//     wordElements[row - 1].querySelectorAll(".word")[letter - 1].innerText = key;
+//     letter += 1;
+//     }
+// }
+
+
+buttonElements.forEach((element) => {
+    element.addEventListener("click", function() {
+    clickButton(element.getElementbyClassName["letterButtons"])
+    }); 
+});
+
+function populateWord(key) {
+    if (letter < 6) {
+    wordElements[row - 1].querySelectorAll(".word")[letter - 1].innerText = key;
+    letter += 1;
+    }
+}
 
 // Button click event
 
