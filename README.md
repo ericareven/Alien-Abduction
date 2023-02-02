@@ -14,7 +14,7 @@ click button html
 // Amanda's game
 buttonElements.forEach((element) => {
     element.addEventListener("click", function() {
-    clickButton(element.attributes["letterButtons"].value)
+    (element.attributes["letterButtons"].value)
     }); 
  });
 
