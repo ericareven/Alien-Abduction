@@ -26,14 +26,16 @@ let guessed = [];
 let wordStatus = null;
 
 
-// Random Word --- not hidden
-// const randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-// const wordId = document.querySelector('#randomWord')
-// wordId.innerHTML = `${randomWord}`
 
+// var setLetter = function(x) {
+//   document.getElementById('name').innerHTML += x;
+// };
+
+// random word selection
 function randomWord() {
     answer = wordBank[Math.floor(Math.random() * wordBank.length)];
 }
+
 randomWord()
 
 function guessedWord() {
@@ -42,6 +44,28 @@ function guessedWord() {
 }
 
 guessedWord()
+
+// // letter buttons
+// const keyboard = document.querySelectorAll("letterButtons")
+// keyboard.addEventListener('click', (e) => {
+//     e.preventDefault()
+//     if(e.target.data.key === 'A') {
+//         document.querySelectorAll("letterButtons").style.backgroundColor = 'red';
+//     }
+// })
+
+
+// const buttonElements = document.querySelectorAll("letterButtons")
+
+// buttonElements.forEach((element) => {
+//     element.addEventListener('click', function() {
+//         keypress(element.attributes['data-letter'].value)
+//         buttonElements.style.backgroundcolor = 'red';
+//         alert('clicked')
+//     })
+// })
+
+
 
 function handleGuess(chosenLetter) {
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
@@ -78,14 +102,14 @@ function updateSpaceShip() {
     document.getElementById(spaceShipPic).src = './images/' + mistakes + '.jpg'
 } // corresponds to images
 
-function reset() {
+function playAgain() {
     mistakes = 0;
     guessed = [];
     randomWord();
     guessedWord();
     updateMistakes();
     //generateButtons();
-}
+} //play again button
 
 // let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 // let guess; //user guess
@@ -244,11 +268,7 @@ function reset() {
 // let incorrectGuess = [];
 
 
-// function wordSelected(wordBank){
-//     let wordBankIndex = Math.floor(Math.random() * wordBank.length);
-//     let word = wordBank[wordBankIndex];
-//     return word;
-//     }
+/////////////////////////////////////////
 
 // function incorrect(){
 //     incorrectGuess =  wrongGuess.push(userSelection);
@@ -268,6 +288,8 @@ function reset() {
 //     // Take input from the player
 //     // Update answerArray and remainingLetters for every correct guess
 //    }
+
+//////////////////////////////////////////////
 
 // const guess = alert("Guess a letter, or click Cancel to stop playing.");
 
@@ -314,14 +336,20 @@ function reset() {
 
 // Do I need to duplicate the function for each button??
 
-// function clickButtonA() {
-//     document.getElementById("buttonA").style.backgroundColor = 'red';
-//     // document.getElementById("buttonA").removeEventListener()
-// }
+//////////////////////////////////////////////
 
-// let buttonA = document.querySelector("#buttonA")
+function clickButtonA() {
+    buttonA.style.backgroundColor = 'red';
+    // if(Element.style.backgroundColor === 'red'){
+    //     document.getElementById("buttonA").removeEventListener()
+    // }
+}
 
-// buttonA.addEventListener("click", clickButtonA)
+let buttonA = document.querySelector("#buttonA")
+
+buttonA.addEventListener("click", clickButtonA)
+
+///////////////////////////////////////////////////
 
 // function clickButtonB() {
 //     document.getElementById("buttonB").style.backgroundColor = 'red';
@@ -341,6 +369,8 @@ function reset() {
 // let buttons = document.querySelector(".letterButtons")
 
 // buttons.addEventListener("click", clickButtons)
+
+
 
 
 // Class notes

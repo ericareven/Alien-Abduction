@@ -7,7 +7,8 @@ CSS .instructionsPage {
     display: hidden;
     }
 
-
+click button html
+<button onclick="clickButton()">Click me</button>
 
 
 // Amanda's game
@@ -40,3 +41,17 @@ function generateButtons() {
         document.getElementById().innerHTML = buttonsHTML
 }
 generateButtons()
+
+
+
+JS Buttons
+let html = '';
+let c;
+for (let i = 65; 90 >= i; i++) {// A-65, Z-90
+  c = String.fromCharCode(i);
+  html += '<button onclick="setLetter(\'' + c + '\');">' + c + '</button>';
+}
+document.getElementById('box').innerHTML = html;
+
+<div id="box"></div>
+<div id="name"></div>  
