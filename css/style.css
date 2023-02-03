@@ -5,48 +5,78 @@ body {
 }
 h1 {
     text-align: center;
-    font-family: 'Rubik Mono One', sans-serif;
     font-size: 50px;
     color: greenyellow;
+    position: relative;
+    top: 2%;
+}
+.begin {
+    text-align: center;
+    position: relative;
+    width: 100%;
 }
 .play {
+    justify-items: center;
+    padding: 12px;
+    font-size: 12px;
+    margin: 7px;
+    width: 70px;
+    font-family: 'Rubik Mono One', sans-serif;
     visibility: visible;
+    left: 0;
 }
 .instructions {
+    justify-items: center;
+    padding: 10px;
+    font-size: 12px;
+    margin: 3px;
+    width: 160px;
+    font-family: 'Rubik Mono One', sans-serif;
     visibility: visible;
     float: left;
 }
 aside {
+    border-block-color: red;
+    border-block-start-style: dotted;
+    border-block-end-style: dotted;
+    border-inline-end-style: dotted;
+    border-inline-start-style: dotted;
+    border-inline-width: thick;
+    border-inline-color: red;
+    border-block-width: thick;
+    background-color: lime;
+    padding: 8px;
     float: right;
 }
-/* .begin {
-    position: relative;
+h3 {
     text-align: center;
-    display: inline-block;
-} */
-
+    position: relative;
+    width: 100%;
+}
 .wordPlacement {
     text-align: center;
     position: fixed;
-    left: 35%;
+    width: 100%;
     top:59%;
 }
 #randomWord {
     color: black;
     font-size: 40px;
+    left: 0;
 }
 .pick {
     text-align: center;
     position: fixed;
-    left: 40%;
-    top: 70%;
+    bottom: 20%;
+    left: 0;
 }
 .letter-buttons {
-    position: relative;
+    position: fixed;
     text-align: center;
     display: inline-block;
     width: 100%;
-    top: 380px;
+    left: 0;
+    bottom: 2%;
     z-index: 1;
 }
 #letter {
@@ -56,6 +86,7 @@ aside {
     margin: 7px;
     width: 60px;
     font-family: 'Rubik Mono One', sans-serif;
+    /* cursor: not-allowed; */
 }
 img.bg {
     /* Set rules to fill background */
@@ -71,12 +102,54 @@ img.bg {
     top: 0;
     left: 0;
     z-index: -1;
-  }
+}
+.alien {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
 .animal {
     position: relative;
-    top: 300px;
-
+    width: 100%;
 }
-img.cow {
-    width: 180px;
+#cow {
+    left: 0;
+    width: 260px;
+}
+#pic-one {
+    width: 40px;
+    visibility: visible;
+}
+#pic-two {
+    width: 40px;
+    visibility: visible;
+}
+#pic-three {
+    width: 40px;
+    visibility: visible;
+}
+#pic-four {
+    width: 40px;
+    visibility: visible;
+}
+#pic-five {
+    width: 40px;
+    visibility: visible;
+}
+#pic-six {
+    width: 40px;
+    visibility: visible;
+}
+#pic-seven {
+    width: 40px;
+    visibility: visible;
+}
+#pic-eight {
+    width: 40px;
+    visibility: visible;
+}
+#pic-nine {
+    width: 300px;
+    opacity: 70%;
+    visibility: visible;
 }
