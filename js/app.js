@@ -78,7 +78,7 @@ function checkLetters(){
             if(mistakesLeft === 0) {
                 setTimeout(() => { // so that the spaceship can be completely built before game
                     gameOver()
-            }, 2000)
+            }, 1000)
             }
     }
 }
@@ -136,6 +136,13 @@ buttonElements.forEach((element) => {
 })
 
 
+function twoPlayer() {
+    document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/project1/Alien-Abduction/2player.html")
+}
+
+let two = document.querySelector(".two-player")
+
+two.addEventListener("click", twoPlayer)
 
 
 // function checkIfGameLost() {
