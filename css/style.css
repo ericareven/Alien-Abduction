@@ -1,5 +1,7 @@
 body {
-    background-color: white;
+    font-family: 'Rubik Mono One', sans-serif;
+    justify-content: center;
+    text-align: center;
 }
 h1 {
     text-align: center;
@@ -7,20 +9,53 @@ h1 {
     font-size: 50px;
     color: greenyellow;
 }
-section.wordPlacement {
-    background-color: pink;
-    color: white;
+.play {
+    visibility: visible;
 }
-#randomWord{
+.instructions {
+    visibility: visible;
+    float: left;
+}
+aside {
+    float: right;
+}
+/* .begin {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+} */
+
+.wordPlacement {
+    text-align: center;
+    position: fixed;
+    left: 35%;
+    top:59%;
+}
+#randomWord {
     color: black;
+    font-size: 40px;
 }
-.letterButtons {
-    background-color: white;
-    color: blue;
+.pick {
+    text-align: center;
+    position: fixed;
+    left: 40%;
+    top: 70%;
 }
-#buttons {
-    background-color: white;
-    color: blue;
+.letter-buttons {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    top: 380px;
+    z-index: 1;
+}
+#letter {
+    justify-items: center;
+    padding: 12px;
+    font-size: 20px;
+    margin: 7px;
+    width: 60px;
+    font-family: 'Rubik Mono One', sans-serif;
 }
 img.bg {
     /* Set rules to fill background */
@@ -37,3 +72,11 @@ img.bg {
     left: 0;
     z-index: -1;
   }
+.animal {
+    position: relative;
+    top: 300px;
+
+}
+img.cow {
+    width: 180px;
+}

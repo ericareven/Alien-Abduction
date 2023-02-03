@@ -15,11 +15,29 @@ const wordBank = ['alien', 'alive', 'alpha', 'awful', 'anger', 'adopt', 'after',
 
 
 let answer = '';
-let maxWrong = 7;
-let mistakes = 0;
+let maxWrong = 8;
 let guessed = [];
 let wordStatus = null;
+let mistakesLeft = 8
 
+// Play & Instruction Buttons
+function play() {
+    document.getElementsByClassName("play").style.visibility = hidden
+    document.getElementsByClassName("instructions").style.visibility = hidden
+    // document.getElementsByClassName("letter-buttons").style.visibility = visible
+}
+
+let playButton = document.querySelector(".play")
+
+playButton.addEventListener("click", play)
+
+function instruct() {
+    alert('Use the alphabet on screen to guess each letter in the hidden 5-letter word. But be careful, 8 wrong guesses and your cow will be abducted!')
+}
+
+let insButton = document.querySelector(".instructions")
+
+insButton.addEventListener("click", instruct)
 
 
 // random word selection
@@ -35,7 +53,7 @@ console.log(wordsArr)
 
 function updateGameboard() {
     console.log(guessed)
-    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : ' _ ')).join('');
+    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? ` ${letter} ` : ' _ ')).join('');
     document.querySelector('#randomWord').innerHTML = wordStatus
 }
 
@@ -47,15 +65,42 @@ let letterButton
 const buttonElements = document.querySelectorAll('button');
 
 function checkLetters(){
+    mistakesLeft -= 1
+    document.getElementById("guesses").innerHTML = `Guesses: ${mistakesLeft}`
     if (wordsArr.includes(letterButton)) {
         guessed.push(letterButton)
         // console.log('y')
         updateGameboard()
+        checkIfGameWon()
     } else {
-        mistakes += 1
+            if(mistakesLeft === 0) {
+                gameOver()
+            }
     }
+
+function gameOver() {
+    alert(`Game Over. The word was ${answer}`)
+}
+}
+
+function checkIfGameWon() {
+    if (guessed.length === 5) {
+        alert('You Won!')
+        setTimeout(() => {
+            reset()
+        }, 4000)
+    }
+}
+function reset() {
+    document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/project1/Alien-Abduction/index.html")
+}
+
+
+function buildSpaceship(){
     
 }
+
+
 
 
 // Button event listener
@@ -66,51 +111,12 @@ buttonElements.forEach((element) => {
         element.style.backgroundColor = 'red';
         // button.disabled = true;
         checkLetters()
+        element.disabled = true;
     })
 })
 
-// function clickButton() {
-//     button.style.backgroundColor = 'red';
-//     if (randomWord.includes('a')) {
-//         wordStatus.replace('_', 'a')
-//     } else {
-//         mistakes += 1
-//     }
-    
-//     button.disabled = true;
-// }
-
-// let button = document.querySelector("#buttona")
-
-// button.addEventListener("click", clickButton)
-
-// // letter buttons
-// const keyboard = document.querySelectorAll("letterButtons")
-// keyboard.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     if(e.target.data.key === 'A') {
-//         document.querySelectorAll("letterButtons").style.backgroundColor = 'red';
-//     }
-// })
 
 
-// const buttonElements = document.querySelectorAll("letterButtons")
-
-// buttonElements.forEach((element) => {
-//     element.addEventListener('click', function() {
-//         keypress(element.attributes['data-letter'].value)
-//         buttonElements.style.backgroundcolor = 'red';
-//         alert('clicked')
-//     })
-// })
-
-
-
-// function checkIfGameWon() {
-//     if (wordStatus === answer) {
-//         document.getElementById
-//     }
-// }
 
 // function checkIfGameLost() {
 //     if (wordStatus === maxWrong) {
@@ -118,121 +124,6 @@ buttonElements.forEach((element) => {
 //         document.getElementById
 //     }
 // }
-
-// function updateSpaceShip() {
-//     document.getElementById(spaceShipPic).src = './images/' + mistakes + '.jpg'
-// } // corresponds to images
-
-
-
-// let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-// let guess; //user guess
-// let letters = []; //correctly guessed letters
-// let wrongLetters = []; //incorrectly guessed letters
-// let counter = 0; //counts correct letters
-// let lives; //counts users lives
-
-
-// function start() {
-//     for (i = 0; i < randomWord.length; i++) {
-//       letters[i] = "__";
-//     }
-//     document.getElementById('randomWord').innerHTML = letters.join(" ");
-
-// }
-
-
-
-/////////////////////////////////////////
-
-
-
-// const answerArray = [];
-//     for (let i = 0; i < randomWord.length; i++) {
-//     answerArray[i] = "_";
-// }
-// const remainingLetters = randomWord.length;
-
-// while (remainingLetters > 0) {
-//     // Game code goes here
-//     // Show the player their progress
-//     // Take input from the player
-//     // Update answerArray and remainingLetters for every correct guess
-//    }
-
-//////////////////////////////////////////////
-
-// const guess = alert("Guess a letter, or click Cancel to stop playing.");
-
-// for (let j = 0; j < randomWord.length; j++) {
-//         if (randomWord[j] === guess) {
-//         answerArray[j] = guess;
-//         remainingLetters--;
-//      }
-//     }
-
-//     answerArray.join(" ")
-
-// Play & Instruction Buttons
-// function play() {
-//     document.getElementsByClassName("play")
-// }
-
-// let playButton = document.querySelector(".play")
-
-// playButton.addEventListener("click", play)
-
-// function instruct() {
-//     document.getElementsByClassName("instructions")
-// }
-
-// let insButton = document.querySelector(".instructions")
-
-// insButton.addEventListener("click", instruct)
-
-
-
-// Button click event
-
-// function clickButton() {
-//     document.querySelectorAll(".letterButtons").style.backgroundColor = 'red';
-//     // document.getElementById("buttonA").removeEventListener()
-// }
-
-// let buttons = document.querySelector(".letterButtons")
-
-// buttons.addEventListener("click", clickButton)
-
-
-
-//////////////////////////////////////////////
-
-
-// Class notes
-// // WITHOUT EVENT PROPAGATION
-// const buttons = document.querySelectorAll(".js-button")
-// for(let i = 0; i < buttons.length; i++){
-//     buttons[i].addEventListener('click', (e)=>{
-//         e.preventDefault()
-//         alert('You clicked a button!')
-//     })
-// }
-
-// // 3 PHASES OF EVENT PROPAGATION
-// // 1. CAPTURE PAHSE --- navigation of the DOM until the target is reached, aka the Target Phase
-// // 2. TARGET PHASE --- secure the target ( eg. targetting an <li> with an event listener)
-// // 3. BUBBLE PHASE --- once we have the target, we work our way back up through the DOM
-// // it is a lot easier to target 1 parent, rather than 100 children
-
-// // WITH EVENT PROPAGATION
-// const controlPanel = document.querySelector(".control-panel")
-// controlPanel.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     if(e.target.tagName === 'A') {
-//         alert('You clicked a button!')
-//     }
-// })
-
 
 
 
