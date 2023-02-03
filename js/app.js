@@ -7,7 +7,7 @@ const wordBank = ['alien', 'alive', 'alpha', 'awful', 'anger', 'adopt', 'after',
 'gamer', 'grape', 'gazed', 'ghost', 'girly', 'given', 'great', 'haste', 'holes', 'hound', 'hasty','hours', 'habit', 'haunt', 'harsh', 'idols', 'image', 'imply', 'index',
 'jokes', 'jeans', 'joint', 'juice', 'labor', 'laces', 'laser', 'latex', 'large', 'lemur', 'learn', 'leaky', 'lefty', 'layer', 'legit', 'lemon', 'liver',
 'money', 'monks', 'mango', 'nacho', 'night', 'nicer', 'noble', 'noisy', 'ocean', 'older', 'ogres', 'olive', 'plane', 'piano', 'paint', 'pools', 'party', 
-'peach', 'paced', 'pound', 'queen', 'quits', 'quirk', 'quick', 'queso', 'rocks', 'ramen', 'rapid', 'reach', 'razor', 'remix', 'rhyme', 'rhino', 'ridge', 'roast',
+'peach', 'paced', 'pound', 'quits', 'quirk', 'quick', 'queso', 'rocks', 'ramen', 'rapid', 'reach', 'razor', 'remix', 'rhyme', 'rhino', 'ridge', 'roast',
 'stain', 'salon', 'sadly', 'sauce', 'savor' ,'table', 'tangy', 'traps', 'taxis', 'teary', 'thank', 'tempo', 'under', 'unzip', 'until', 'vague', 'vapor', 'vegan', 'venom',
 'white', 'weary', 'wagon', 'waist', 'wacky', 'yacht', 'yeast', 'yelps', 'zebra']
 
@@ -21,16 +21,16 @@ let wordStatus = null;
 let mistakesLeft = 8;
 
 // Play & Instruction Buttons
-function play() {
-    document.getElementsByClassName("play").style.visibility = hidden
-    document.getElementsByClassName("instructions").style.visibility = hidden
-    document.getElementById("letter").cursor = allowed
-    // document.getElementsByClassName("letter-buttons").style.visibility = visible
-}
+// function play() {
+//     document.getElementsByClassName("play").style.visibility = hidden
+//     document.getElementsByClassName("instructions").style.visibility = hidden
+//     document.getElementById("letter").cursor = allowed
+//     // document.getElementsByClassName("letter-buttons").style.visibility = visible
+// }
 
-let playButton = document.querySelector(".play")
+// let playButton = document.querySelector(".play")
 
-playButton.addEventListener("click", play)
+// playButton.addEventListener("click", play)
 
 function instruct() {
     alert('Use the alphabet below to guess each letter in the hidden 5-letter word. But be careful, 8 wrong guesses and your cow will be abducted!')
@@ -63,7 +63,7 @@ updateGameboard()
 
 // console.log(randomWord)
 let letterButton
-const buttonElements = document.querySelectorAll('button');
+const buttonElements = document.querySelectorAll('#letter');
 
 function checkLetters(){
     if (wordsArr.includes(letterButton)) {
@@ -76,7 +76,7 @@ function checkLetters(){
         document.getElementById("guesses").innerHTML = `Guesses: ${mistakesLeft}`
         buildSpaceship()
             if(mistakesLeft === 0) {
-                setTimeout(() => {
+                setTimeout(() => { // so that the spaceship can be completely built before game
                     gameOver()
             }, 2000)
             }
@@ -90,8 +90,10 @@ function gameOver() {
 
 function checkIfGameWon() {
     if (guessed.length === 5) {
-        alert('You Won!')
-        reset()
+        setTimeout(()=> { // so that the alert and reset come after the full word is displayed
+            alert('You Won!')
+            reset()
+        }, 1000)
     }
 }
 

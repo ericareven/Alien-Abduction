@@ -5,67 +5,69 @@
         <title>Alien Abduction</title>
         <link rel="stylesheet" href="css/style.css">
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&family=Rubik+Mono+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Bayon&family=Butcherman&family=Gugi&family=Major+Mono+Display&family=Megrim&family=Rubik+Glitch&family=Rubik+Mono+One&display=swap');
         </style>
     </head>
     <body>
         <script type="text/javascript" src="js/app.js"></script>
         <header>
             <h1>Alien Abduction</h1>
-        </header>
-        <img src="images/farmbg.jpeg" alt="farm" class="bg">
-        <p>
             <div class="begin">
                 <button class="play">Play</button>
                 <button class="instructions">Instructions</button>
             </div>
-                <aside id="guesses">Guesses: 8</aside>
-            <div class="alien">
+        </header>
+        <img src="images/farmbg.jpeg" alt="farm" class="bg">
+        <aside id="guesses">Guesses:8</aside>
+        <div class="alien">
+                <img src="images/spaceship6.png" alt="part of spaceship" id="pic-six">
+                <img src="images/spaceship7.png" alt="part of spaceship" id="pic-seven">
+                <img src="images/spaceship8.png" alt="part of spaceship" id="pic-eight">
                 <img src="images/spaceship1.png" alt="part of spaceship" id="pic-one">
                 <img src="images/spaceship2.png" alt="part of spaceship" id="pic-two">
                 <img src="images/spaceship3.png" alt="part of spaceship" id="pic-three">
                 <img src="images/spaceship4.png" alt="part of spaceship" id="pic-four">
                 <img src="images/spaceship5.png" alt="part of spaceship" id="pic-five">
-                <img src="images/spaceship6.png" alt="part of spaceship" id="pic-six">
-                <img src="images/spaceship7.png" alt="part of spaceship" id="pic-seven">
-                <img src="images/spaceship8.png" alt="part of spaceship" id="pic-eight">
+        </div>
+        <div class="light">
                 <img src="images/lightbeam.png" alt="light beam" id="pic-nine">
             </div>
+        <div class="container"> 
             <div class="animal">
                 <img src="images/cow.png" alt="cow" id="cow">
             </div>
-        </p>
-        <section class="wordPlacement">
-            <h3 id="randomWord"></h3>
-        </section> 
+            <section class="wordPlacement">
+                <h3 id="randomWord"></h3>
+            </section> 
             <h3 class="pick">Pick a Letter</h3>
-        <div class="letter-buttons">
-             <button id="letter" data-key="A">A</button>
-             <button id="letter" data-key="B">B</button>
-             <button id="letter" data-key="C">C</button>
-             <button id="letter" data-key="D">D</button>
-             <button id="letter" data-key="E">E</button>
-             <button id="letter" data-key="F">F</button>
-             <button id="letter" data-key="G">G</button>
-             <button id="letter" data-key="H">H</button>
-             <button id="letter" data-key="I">I</button>
-             <button id="letter" data-key="J">J</button>
-             <button id="letter" data-key="K">K</button>
-             <button id="letter" data-key="L">L</button>
-             <button id="letter" data-key="M">M</button>
-             <button id="letter" data-key="N">N</button>
-             <button id="letter" data-key="O">O</button>
-             <button id="letter" data-key="P">P</button>
-             <button id="letter" data-key="Q">Q</button>
-             <button id="letter" data-key="R">R</button>
-             <button id="letter" data-key="S">S</button>
-             <button id="letter" data-key="T">T</button>
-             <button id="letter" data-key="U">U</button>
-             <button id="letter" data-key="V">V</button>
-             <button id="letter" data-key="W">W</button>
-             <button id="letter" data-key="X">X</button>
-             <button id="letter" data-key="Y">Y</button>
-             <button id="letter" data-key="Z">Z</button>
-        </div>
+            <div class="letter-buttons">
+                <button id="letter" data-key="A">A</button>
+                <button id="letter" data-key="B">B</button>
+                <button id="letter" data-key="C">C</button>
+                <button id="letter" data-key="D">D</button>
+                <button id="letter" data-key="E">E</button>
+                <button id="letter" data-key="F">F</button>
+                <button id="letter" data-key="G">G</button>
+                <button id="letter" data-key="H">H</button>
+                <button id="letter" data-key="I">I</button>
+                <button id="letter" data-key="J">J</button>
+                <button id="letter" data-key="K">K</button>
+                <button id="letter" data-key="L">L</button>
+                <button id="letter" data-key="M">M</button>
+                <button id="letter" data-key="N">N</button>
+                <button id="letter" data-key="O">O</button>
+                <button id="letter" data-key="P">P</button>
+                <button id="letter" data-key="Q">Q</button>
+                <button id="letter" data-key="R">R</button>
+                <button id="letter" data-key="S">S</button>
+                <button id="letter" data-key="T">T</button>
+                <button id="letter" data-key="U">U</button>
+                <button id="letter" data-key="V">V</button>
+                <button id="letter" data-key="W">W</button>
+                <button id="letter" data-key="X">X</button>
+                <button id="letter" data-key="Y">Y</button>
+                <button id="letter" data-key="Z">Z</button>
+            </div>
+        </div>   
     </body>
 </html>
