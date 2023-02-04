@@ -72,14 +72,15 @@ function checkLetters(){
 }
 
 function gameOver() {
-    alert(`Game Over. The word was ${answer}`)
+    alert(`Game Over. The word was ${answer}
+Let's play again!`)
     reset()
 }
 
 function checkIfGameWon() {
     if (guessed.length === 5) {
         setTimeout(()=> { // so that the alert and reset come after the full word is displayed
-            alert('You Won!')
+            alert(`You Won! Let's play again!`)
             reset()
         }, 1000)
     }

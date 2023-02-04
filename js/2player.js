@@ -59,14 +59,16 @@ randomWordId.innerHTML = `${secretWord}`
     }
     
     function gameOver() {
-        alert(`Player One Won! The word was ${secretWord}`)
+        alert(`Player One Won! The word was ${secretWord}
+Let's play again!`)
         reset()
     }
     
     function checkIfGameWon() {
         if (guessed.length === 5) {
             setTimeout(()=> { // so that the alert and reset come after the full word is displayed
-                alert(`Player Two Won! I guess the secret word wasn't tricky enough.`)
+                alert(`Player Two Won! I guess the secret word wasn't tricky enough.
+Let's play again!`)
                 reset()
             }, 1000)
         }
