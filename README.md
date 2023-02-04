@@ -12,13 +12,15 @@ And all the instructors
 
 What I'd like to Improve On:
 
-Audio & Sound Effects
+- More exciting Win
 
-More animations
+- Audio & Sound Effects
 
-Hard level:
-Timer
-Longer words
+- More animations
+
+- Hard level:
+    Timer
+    Longer words
 
 
 

@@ -63,7 +63,7 @@ function checkLetters(){
         document.getElementById("guesses").innerHTML = `Guesses: ${mistakesLeft}`
         buildSpaceship()
             if(mistakesLeft === 0) {
-                moveCow()
+                abductCow()
                 setTimeout(() => { // so that the spaceship can be completely built before game over
                     gameOver()
             }, 1000)
@@ -79,6 +79,7 @@ Let's play again!`)
 
 function checkIfGameWon() {
     if (guessed.length === 5) {
+        // cowWins()
         setTimeout(()=> { // so that the alert and reset come after the full word is displayed
             alert(`You Won! Let's play again!`)
             reset()
@@ -113,10 +114,19 @@ function buildSpaceship(){
 }
 
 let elem = document.querySelector(".animal");
-function moveCow() {
+function abductCow() {
   elem.style.transform = "translate(0,-100px)"
   elem.style.opacity = "0%"
 }
+
+// function cowWins() {
+//     elem.style.transition = ".5s"
+//     elem.style.transform = "translate(0,-100px)"
+//     window.setTimeout(() => {
+//         elem.style.transform = "translate(0,0)"
+//     },1000 / 500)
+    
+// }
 
 // Button event listener
 buttonElements.forEach((element) => {
