@@ -50,6 +50,7 @@ randomWordId.innerHTML = `${secretWord}`
             document.getElementById("guesses").innerHTML = `Guesses: ${mistakesLeft}`
             buildSpaceship()
                 if(mistakesLeft === 0) {
+                    moveCow()
                     setTimeout(() => { // so that the spaceship can be completely built before game
                         gameOver()
                 }, 1000)
@@ -97,6 +98,12 @@ randomWordId.innerHTML = `${secretWord}`
         }
     }
     
+
+let elem = document.querySelector(".animal");
+function moveCow() {
+  elem.style.transform = "translate(0,-100px)"
+  elem.style.opacity = "0%"
+}
     
     // Button event listener
     buttonElements.forEach((element) => {
