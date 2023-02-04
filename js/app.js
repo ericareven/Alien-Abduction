@@ -89,7 +89,7 @@ function checkIfGameWon() {
 
 function reset() {
     // document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/project1/Alien-Abduction/index.html")
-    document.location = "/Users/erica.reven/Desktop/seir-eustoma/projects/project1/Alien-Abduction/2player.html"
+    window.location = "/Users/erica.reven/Desktop/seir-eustoma/projects/project1/Alien-Abduction/index.html"
 }
 
 // Build space ship with each wrong guess
