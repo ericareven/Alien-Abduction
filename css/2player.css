@@ -8,6 +8,8 @@ body {
     font-family: 'Rubik Mono One', sans-serif;
     /* justify-content: center; */
     /* text-align: center; */
+    height: 800px;
+    width: 1000px;
 }
 header {
     justify-content: center;
@@ -33,7 +35,7 @@ h1 {
     width: 130px;
     font-family: 'Bayon', sans-serif;
     float: left;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 .one-player {
     justify-items: center;

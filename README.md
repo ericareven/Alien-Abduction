@@ -1,16 +1,30 @@
 # Alien-Abduction
 GA - Project One
 
-
-CSS: 980 x 1960
-CSS: 400 x 800 (tablet)
-CSS: 1000 x 900 (inspect open)
-
 Big Thank You to:
 Amanda
-Janine
-Kevin
+Janine - thank you for the moral support :)
+Kevin 
 Jessica
+And all the instructors
+
+
+
+What I'd like to Improve On:
+
+Audio & Sound Effects
+
+More animations
+
+Hard level:
+Timer
+Longer words
+
+
+
+
+
+
 
 
 
@@ -30,7 +44,6 @@ HTML Modal
                 <p>Some text in the Modal..</p>
             </div>
         </div> -->
-
 
 
 CSS Modal
@@ -73,3 +86,32 @@ CSS Modal
     text-decoration: none;
     cursor: pointer;
   }
+
+
+JS Modal
+
+// // Get the modal
+// let modal = document.getElementById("myModal");
+
+// // Get the button that opens the modal
+// let btn = document.getElementById("myBtn");
+
+// // Get the <span> element that closes the modal
+// let span = document.getElementsByClassName("close")[0];
+
+// // When the user clicks on the button, open the modal
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }

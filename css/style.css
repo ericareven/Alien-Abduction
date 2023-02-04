@@ -204,7 +204,11 @@ img.bg {
 }
 .animal {
     z-index: 1;
-    margin: 0 auto -5% 0
+    margin: 0 auto -5% 0;
+    transform: translate(0,0);
+    transition-timing-function: ease-in-out;
+    transition-duration: 2s;
+    opacity: 100%;
 }
 #cow {
     width: 260px;

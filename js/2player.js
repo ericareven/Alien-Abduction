@@ -1,42 +1,19 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    // no words have duplicate letters 
-    // const wordBank = ['alien', 'alive', 'alpha', 'awful', 'anger', 'adopt', 'after', 'bears', 'bounce', 'blink', 'baker', 'bikes', 'blame', 'break', 'brave',
-    // 'cream', 'crash', 'count', 'crush', 'chase', 'cheap', 'chalk', 'clean', 'chore', 'crave', 'drops', 'drain', 'dance', 'diner', 'dirty', 'doubt', 'dream',
-    // 'earth', 'elbow', 'extra', 'entry', 'eight', 'exist', 'edits', 'front', 'forks', 'frogs', 'faint', 'focus', 'flare', 'fancy', 'faces', 'frown', 'found', 'farms', 
-    // 'gamer', 'grape', 'gazed', 'ghost', 'girly', 'given', 'great', 'haste', 'holes', 'hound', 'hasty','hours', 'habit', 'haunt', 'harsh', 'idols', 'image', 'imply', 'index',
-    // 'jokes', 'jeans', 'joint', 'juice', 'labor', 'laces', 'laser', 'latex', 'large', 'lemur', 'learn', 'leaky', 'lefty', 'layer', 'legit', 'lemon', 'liver',
-    // 'money', 'monks', 'mango', 'nacho', 'night', 'nicer', 'noble', 'noisy', 'ocean', 'older', 'ogres', 'olive', 'plane', 'piano', 'paint', 'pools', 'party', 
-    // 'peach', 'paced', 'pound', 'quits', 'quirk', 'quick', 'queso', 'rocks', 'ramen', 'rapid', 'reach', 'razor', 'remix', 'rhyme', 'rhino', 'ridge', 'roast',
-    // 'stain', 'salon', 'sadly', 'sauce', 'savor' ,'table', 'tangy', 'traps', 'taxis', 'teary', 'thank', 'tempo', 'under', 'unzip', 'until', 'vague', 'vapor', 'vegan', 'venom',
-    // 'white', 'weary', 'wagon', 'waist', 'wacky', 'yacht', 'yeast', 'yelps', 'zebra']
-    
-    // console.log(wordBank.length) // 148 words
-    
 
-const secretWord = prompt(`Please type a 5 letter word to stump player 2`).toUpperCase()
+const secretWord = prompt(`Please type a 5 letter word to stump player 2. 
+Hint: It is best to use words that do not have duplicate letters.`).toUpperCase()
 const randomWordId = document.querySelector('#randomWord')
 randomWordId.innerHTML = `${secretWord}`
-    
-    // let answer = '';
+
+
     let guessed = [];
     let wordStatus = null;
     let mistakesLeft = 8;
     
-    // Play & Instruction Buttons
-    // function play() {
-    //     document.getElementsByClassName("play").style.visibility = hidden
-    //     document.getElementsByClassName("instructions").style.visibility = hidden
-    //     document.getElementById("letter").cursor = allowed
-    //     // document.getElementsByClassName("letter-buttons").style.visibility = visible
-    // }
-    
-    // let playButton = document.querySelector(".play")
-    
-    // playButton.addEventListener("click", play)
     
     function instruct() {
-        alert('Use the alphabet below to guess each letter in the hidden 5-letter word. But be careful, 8 wrong guesses and your cow will be abducted!')
+        alert(`Player one must type a 5-letter word into the prompt to stump player two. Player two has 8 chances to guess the 5 letters in player one's wordStatus, before the alien abducts the cow!`)
     }
     
     let insButton = document.querySelector(".instructions")
@@ -44,13 +21,6 @@ randomWordId.innerHTML = `${secretWord}`
     insButton.addEventListener("click", instruct)
     
     
-    // // random word selection
-    // function randomWord() {
-    //     answer = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
-    //     // document.querySelector('#randomWord').innerHTML = answer
-    // }
-    
-    // randomWord()
 
     let wordsArr = secretWord.split('')
     console.log(wordsArr)
@@ -88,14 +58,14 @@ randomWordId.innerHTML = `${secretWord}`
     }
     
     function gameOver() {
-        alert(`Player One Won! The tricky word was ${secretWord}`)
+        alert(`Player One Won! The word was ${secretWord}`)
         reset()
     }
     
     function checkIfGameWon() {
         if (guessed.length === 5) {
             setTimeout(()=> { // so that the alert and reset come after the full word is displayed
-                alert(`Player Two Won! I guess the secret word wasn't tricky enough`)
+                alert(`Player Two Won! I guess the secret word wasn't tricky enough.`)
                 reset()
             }, 1000)
         }
@@ -139,31 +109,7 @@ randomWordId.innerHTML = `${secretWord}`
         })
     })
     
-// // Get the modal
-// let modal = document.getElementById("myModal");
 
-// // Get the button that opens the modal
-// let btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// let span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
 
 function onePlayer() {
     document.location.replace("/Users/erica.reven/Desktop/seir-eustoma/projects/project1/Alien-Abduction/index.html")

@@ -13,24 +13,11 @@ const wordBank = ['alien', 'alive', 'alpha', 'awful', 'anger', 'adopt', 'after',
 
 // console.log(wordBank.length) // 149 words
 
-
 let answer = '';
-let maxWrong = 8;
 let guessed = [];
 let wordStatus = null;
 let mistakesLeft = 8;
 
-// Play & Instruction Buttons
-// function play() {
-//     document.getElementsByClassName("play").style.visibility = hidden
-//     document.getElementsByClassName("instructions").style.visibility = hidden
-//     document.getElementById("letter").cursor = allowed
-//     // document.getElementsByClassName("letter-buttons").style.visibility = visible
-// }
-
-// let playButton = document.querySelector(".play")
-
-// playButton.addEventListener("click", play)
 
 function instruct() {
     alert('Use the alphabet below to guess each letter in the hidden 5-letter word. But be careful, 8 wrong guesses and your cow will be abducted!')
@@ -76,7 +63,8 @@ function checkLetters(){
         document.getElementById("guesses").innerHTML = `Guesses: ${mistakesLeft}`
         buildSpaceship()
             if(mistakesLeft === 0) {
-                setTimeout(() => { // so that the spaceship can be completely built before game
+                moveCow()
+                setTimeout(() => { // so that the spaceship can be completely built before game over
                     gameOver()
             }, 1000)
             }
@@ -123,6 +111,11 @@ function buildSpaceship(){
     }
 }
 
+let elem = document.querySelector(".animal");
+function moveCow() {
+  elem.style.transform = "translate(0,-100px)"
+  elem.style.opacity = "0%"
+}
 
 // Button event listener
 buttonElements.forEach((element) => {
@@ -143,14 +136,6 @@ function twoPlayer() {
 let two = document.querySelector(".two-player")
 
 two.addEventListener("click", twoPlayer)
-
-
-// function checkIfGameLost() {
-//     if (wordStatus === maxWrong) {
-//         document.querySelector('#randomWord').innerHTML = `The answer was ${answer}`
-//         document.getElementById
-//     }
-// }
 
 
 
