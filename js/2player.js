@@ -1,11 +1,31 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 
-const secretWord = prompt(`Please type a 5 letter word to stump player 2. 
+let secretWord = prompt(`Please type a 5 letter word to stump player 2. 
 Hint: It is best to use words that do not have duplicate letters.`).toUpperCase()
-const randomWordId = document.querySelector('#randomWord')
-randomWordId.innerHTML = `${secretWord}`
+// const randomWordId = document.querySelector('#randomWord')
+// randomWordId.innerHTML = `${secretWord}`
 
+// function playerOneWord() {
+    
+//     checkSecretWord()
+// }
+
+// playerOneWord()
+
+
+function checkSecretWord(){
+    if(secretWord.length !== 5){
+       secretWord = prompt('Please type a 5-letter word').toUpperCase()
+       const randomWordId = document.querySelector('#randomWord')
+        randomWordId.innerHTML = `${secretWord}`
+    } else {
+        const randomWordId = document.querySelector('#randomWord')
+        randomWordId.innerHTML = `${secretWord}`
+    }
+}
+
+checkSecretWord()
 
     let guessed = [];
     let wordStatus = null;
@@ -13,7 +33,7 @@ randomWordId.innerHTML = `${secretWord}`
     
     
     function instruct() {
-        alert(`Player one must type a 5-letter word into the prompt to stump player two. Player two has 8 chances to guess the 5 letters in player one's wordStatus, before the alien abducts the cow!`)
+        alert(`Player one must type a 5-letter word into the prompt to stump player two. Player two has 8 chances to guess the 5 letters in player one's word, before the alien abducts the cow!`)
     }
     
     let insButton = document.querySelector(".instructions")
